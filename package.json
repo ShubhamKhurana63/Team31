@@ -1,6 +1,12 @@
 {
+<<<<<<< HEAD
   "name": "boringtinder",
   "version": "1.0.0",
+=======
+  "name": "team31",
+  "version": "1.0.0",
+  "description": "",
+>>>>>>> 04246cd372580087da6ac63a8242133f6eda60e0
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +22,7 @@
   },
   "homepage": "https://github.com/ShubhamKhurana63/Team31#readme",
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^3.0.6",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
@@ -26,4 +33,11 @@
     "nodemon": "^1.19.1"
   },
   "description": ""
+=======
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.3.1"
+  }
+>>>>>>> 04246cd372580087da6ac63a8242133f6eda60e0
 }
