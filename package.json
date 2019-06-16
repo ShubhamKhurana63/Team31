@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/app.js",
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
     "apollo-client": "^2.6.2",
     "apollo-link-http": "^1.5.15",
     "async": "^3.0.1",
+    "async-await": "^0.1.40",
+    "asyncawait": "^1.0.8",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "bored": "^1.0.0",
@@ -31,7 +34,6 @@
     "express-graphql": "^0.8.0",
     "express-session": "^1.16.2",
     "fancybox": "^3.0.1",
-    "googleapis": "^40.0.0",
     "graphql": "^14.3.1",
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
@@ -39,7 +41,7 @@
     "jsdom": "^15.1.1",
     "mongodb": "^3.2.7",
     "nodemon": "^1.19.1",
-    "passport": "^0.4.0"
+    "graphql": "^14.3.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
