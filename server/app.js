@@ -6,16 +6,39 @@ const {buildSchema}=require('graphql');
 var request = require('request');
 var async = require('asyncawait/async');
 var await = require('asyncawait/await');
-const PORT=process.env.PORT || 3100;
+const PORT=process.env.PORT || 3000;
 const bored = require('bored');
 
 
 
 var app=express();
 
-app.use(bodyParser.json())
+let datetime = new Date();
+const ObjectId = require('mongodb').ObjectID;
+const bcrypt = require('bcrypt');
+//const express = require('express');
+//const bodyParser = require('body-parser')
+const session =  require('express-session') ;
+//const app = express();
+app.use(bodyParser());
+app.use(express.static('public'));
 
 
+
+app.set('view engine','ejs');
+const MongoClient = require('mongodb').MongoClient
+// MongoClient.connect('mongodb+srv://vS12:npm123@cluster0-9p4gv.mongodb.net/Users?retryWrites=true',(err, database) =>{
+// if (err) return console.log(err)
+// 	app.listen(PORT,function (){
+// })
+// })
+
+app.get('/', (req, res) => {
+  // AirlineDb.collection('Users').find().toArray(function(err, results){
+  // 	if(err) return console.log(err)
+  		res.render('index.html')
+  // })
+})
 
 
 
@@ -75,19 +98,7 @@ rootValue:{
                     list.push(obj);
                 });
             }
-        //     var qry=list[0].activityName
-        //     list.forEach(element=>
-        //      {
-        //          var query=element.activityName;
-        //          var links=[];
-        //          await getResult(query).then(function(result){
-        //              //console.log("=====DONE=====");
-        //              links.push(result);
-        //              //console.log(result)
-        //          })
-        //      element.relevantLinks=links;
-        //      })
-        //    // console.log(result)
+      
     return list
     }
 },
