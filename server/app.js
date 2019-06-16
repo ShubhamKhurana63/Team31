@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var SerpWow = require('google-search-results-serpwow')
+
 const graphqlHttp=require('express-graphql');
 const {buildSchema}=require('graphql');
 var request = require('request');
@@ -14,22 +14,10 @@ const bored = require('bored');
 var app=express();
 
 app.use(bodyParser.json())
-let serpwow = new SerpWow('7B83B23001C94FAEA70D42442DD6A684')
 
 
 
-async function getResult(query) {
- 
-    let result = await serpwow.json({
-      q: query
-    });
-    
-  
-    console.log("=====DONE=====")
-    // pretty-print the result
-    console.log();
-    return JSON.stringify(result.organic_results[0].link, 0, 2)
-  }
+
 
 app.use('/graphql',graphqlHttp({
 
@@ -65,11 +53,7 @@ rootValue:{
                 participants:[1]
             }             
 
-            var dummyList=[];
-            dummyList.push(options);
-            dummyList.push(options);
-            dummyList.push(options);
-            dummyList.push(options);
+           
 
            //ForEachSeries(dummyList,function(item,callback)
             //{   
