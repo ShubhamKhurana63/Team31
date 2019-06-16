@@ -5,9 +5,10 @@ Technologies used:
 Frontend - Embedded JavaScript and Bootstrap 4
 Backend - Node.js
 Database - MongoDB
-API consumed - https://www.boredapi.com/api/
+API consumed - https://www.boredapi.com/api
 
 We also set-up Apollo Graph-ql client and server. 
 
-The website is hosted at : https://boringtinder.herokuapp.com/graphql
+The website is hosted at : https://boringtinder.herokuapp.com
+and the GraphqlAPI is hosted at : https://boringtinder.herokuapp.com/graphql
 
