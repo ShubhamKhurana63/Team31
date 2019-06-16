@@ -41,6 +41,7 @@ BRUSHED.listenerMenu = function(){
 	});
 }
 
+
 /* ==================================================
    Slider Options
 ================================================== */
@@ -49,15 +50,15 @@ BRUSHED.slider = function(){
 	$.supersized({
 		// Functionality
 		slideshow               :   1,			// Slideshow on/off
-		autoplay				:	0,			// Slideshow starts playing automatically
+		autoplay				:	1,			// Slideshow starts playing automatically
 		start_slide             :   1,			// Start slide (0 is random)
 		stop_loop				:	0,			// Pauses slideshow on last slide
 		random					: 	0,			// Randomize slide order (Ignores start slide)
 		slide_interval          :   12000,		// Length between transitions
-		transition              :   0, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+		transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
 		transition_speed		:	300,		// Speed of transition
-		new_window				:	0,			// Image links open in new window/tab
-		pause_hover             :   1,			// Pause slideshow on hover
+		new_window				:	1,			// Image links open in new window/tab
+		pause_hover             :   0,			// Pause slideshow on hover
 		keyboard_nav            :   1,			// Keyboard navigation on/off
 		performance				:	1,			// 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
 		image_protect			:	1,			// Disables image dragging and right click with Javascript
@@ -76,15 +77,15 @@ BRUSHED.slider = function(){
 		thumb_links				:	0,			// Individual thumb links for each slide
 		thumbnail_navigation    :   0,			// Thumbnail navigation
 		slides 					:  	[			// Slideshow Images
-											{image : '_include/img/slider-images/image01.jpg', title : '<div class="slide-content"><a class="fancybox" href="#activity">Education</a></div>'},
-											{image : '_include/img/slider-images/image02.jpg', title : '<div class="slide-content">Recreational</div>', thumb : '', url : ''},
-											{image : '_include/img/slider-images/image03.jpg', title : '<div class="slide-content">Social</div>', thumb : '', url : ''},
-											{image : '_include/img/slider-images/image04.jpg', title : '<div class="slide-content">Diy</div>', thumb : '', url : ''},
-											{image : '_include/img/slider-images/image05.jpg', title : '<div class="slide-content">Charity</div>', thumb : '', url : ''} ,
-											{image : '_include/img/slider-images/image06.jpg', title : '<div class="slide-content">Cooking</div>', thumb : '', url : ''} ,
-											{image : '_include/img/slider-images/image07.jpg', title : '<div class="slide-content">Relaxation</div>', thumb : '', url : ''} ,
-											{image : '_include/img/slider-images/image08.jpg', title : '<div class="slide-content">Music</div>', thumb : '', url : ''} ,
-											{image : '_include/img/slider-images/image09.jpg', title : '<div class="slide-content">Busywork</div>', thumb : '', url : ''}   
+											{image : '_include/img/slider-images/image01.jpg', title : '<div class="slide-content"><a href="/linkss?type=education"> Education</a></div>'},
+											{image : '_include/img/slider-images/image02.jpg', title : '<div class="slide-content"><a href="/linkss?type=recreational"> Recreational</a></div>', thumb : '', url : ''},
+											{image : '_include/img/slider-images/image03.jpg', title : '<div class="slide-content"><a href="/linkss?type=social"> Social</a></div>', thumb : '', url : ''},
+											{image : '_include/img/slider-images/image04.jpg', title : '<div class="slide-content"><a href="/linkss?type=diy"> Diy</div></a>', thumb : '', url : ''},
+											{image : '_include/img/slider-images/image05.jpg', title : '<div class="slide-content"><a href="/linkss?type=charity"> Charity</a></div>', thumb : '', url : ''} ,
+											{image : '_include/img/slider-images/image06.jpg', title : '<div class="slide-content"><a href="/linkss?type=cooking"> Cooking</a></div>', thumb : '', url : ''} ,
+											{image : '_include/img/slider-images/image07.jpg', title : '<div class="slide-content"><a href="/linkss?type=relaxation"> Relaxation</a></div>', thumb : '', url : ''} ,
+											{image : '_include/img/slider-images/image08.jpg', title : '<div class="slide-content"><a href="/linkss?type=music"> Music</a></div>', thumb : '', url : ''} ,
+											{image : '_include/img/slider-images/image09.jpg', title : '<div class="slide-content"><a href="/linkss?type=busywork"> Busywork</a></div>', thumb : '', url : ''}   
 									],
 									
 		// Theme Options			   
@@ -169,7 +170,7 @@ BRUSHED.fancyBox = function(){
 				padding : 0,
 				beforeShow: function () {
 					this.title = $(this.element).attr('title');
-					this.title = '<h4>' + this.title + '</h4>' + '<p>' + $(this.element).parent().find('img').attr('alt') + '</p>';
+					
 				},
 				helpers : {
 					title : { type: 'inside' },
