@@ -11,7 +11,7 @@ app.set('view engine','ejs');
 const MongoClient = require('mongodb').MongoClient
 MongoClient.connect('mongodb+srv://vS12:npm123@cluster0-9p4gv.mongodb.net/Users?retryWrites=true',(err, database) =>{
 if (err) return console.log(err)
-	app.listen(3000,function (){
+	app.listen(3300,function (){
 })
 })
 

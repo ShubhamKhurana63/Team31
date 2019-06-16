@@ -1,12 +1,11 @@
 {
-  "name": "boringtinder",
-  "version": "1.0.0",
   "name": "team31",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node server/app.js",
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -20,18 +19,19 @@
   "homepage": "https://github.com/ShubhamKhurana63/Team31#readme",
   "dependencies": {
     "async": "^3.0.1",
+    "async-await": "^0.1.40",
     "bcrypt": "^3.0.6",
-    "express-session": "^1.16.2",
-    "mongodb": "^3.2.7",
-    "nodemon": "^1.19.1",
     "body-parser": "^1.19.0",
     "bored": "^1.0.0",
     "express": "^4.17.1",
     "express-graphql": "^0.8.0",
+    "express-session": "^1.16.2",
     "googleapis": "^40.0.0",
-    "graphql": "^14.3.1"
+    "graphql": "^14.3.1",
+    "mongodb": "^3.2.7",
+    "nodemon": "^1.19.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
-  } 
   }
+}

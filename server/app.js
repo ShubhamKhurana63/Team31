@@ -1,12 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-const passport = require('passport');
+var SerpWow = require('google-search-results-serpwow')
 const graphqlHttp=require('express-graphql');
 const {buildSchema}=require('graphql');
 var request = require('request');
 var async = require('asyncawait/async');
 var await = require('asyncawait/await');
-const PORT=3100;
+const PORT=process.env.PORT || 3100;
 const bored = require('bored');
 
 
@@ -14,34 +14,22 @@ const bored = require('bored');
 var app=express();
 
 app.use(bodyParser.json())
-app.use(passport.initialize());
-app.use(passport.session());
-// Add the line below, which you're missing:
-//require('./passport/config/file')(passport);
-
-//  app.post('/login/auth',(req,res)=>
-//  {
-//  res.status(200).send('hello auth');
-//  })
-
-//  app.post('/login/signup',(req,res)=>
-//  {
-//      res.status(200).send('hello signup')
-//  })
-
-app.get('/login/callback',
-    passport.authenticate('google', {
-        failureRedirect: '/'
-    }),
-    (req, res) => {
-                console.log('===================');
-                console.log(JSON.stringify(req));
-                console.log('===================');
-    }
-);
+let serpwow = new SerpWow('7B83B23001C94FAEA70D42442DD6A684')
 
 
 
+async function getResult(query) {
+ 
+    let result = await serpwow.json({
+      q: query
+    });
+    
+  
+    console.log("=====DONE=====")
+    // pretty-print the result
+    console.log();
+    return JSON.stringify(result.organic_results[0].link, 0, 2)
+  }
 
 app.use('/graphql',graphqlHttp({
 
@@ -57,7 +45,7 @@ type Activity
     cost:String
     participants:String
     activityName: String
-    relevantLinks:[String!]! 
+    relevantLinks:String 
 }
 schema{    
     query:rootQuery
@@ -70,9 +58,7 @@ rootValue:{
         var categoryType=args.category;
         var list=[];
 
-       // async.forEachLimit()
-       // for(var i=0;i<4;i++)
-        //{
+
            
             let options = {
                 type:categoryType,
@@ -97,26 +83,31 @@ rootValue:{
                     obj.participants=response.participants;
                     obj.cost=response.price;
                     obj.activityId=response.key;
-                    console.log("========",obj)
+
+
+                    obj.relevantLinks=response.link
+                   // console.log("========",obj);
+                   
                     list.push(obj);
-                    //callback()
                 });
             }
-                
-            // },function()
-            // {
-            //     console.log("KHURANA");
-            //     console.log(list);
-            //     return list;
-            // });
-        //}
-    setTimeout(function(){ console.log("Hello"); }, 10000);
-    console.log("KHURANA7")
+        //     var qry=list[0].activityName
+        //     list.forEach(element=>
+        //      {
+        //          var query=element.activityName;
+        //          var links=[];
+        //          await getResult(query).then(function(result){
+        //              //console.log("=====DONE=====");
+        //              links.push(result);
+        //              //console.log(result)
+        //          })
+        //      element.relevantLinks=links;
+        //      })
+        //    // console.log(result)
     return list
     }
 },
 graphiql:true
 }));
 
-
-app.listen(3100)
+app.listen(PORT)
