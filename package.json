@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node server/app.js",
+    "start": "node server/app.js",
     "test": ""
   },
   "repository": {
@@ -20,6 +20,7 @@
   "dependencies": {
     "async": "^3.0.1",
     "async-await": "^0.1.40",
+    "asyncawait": "^1.0.8",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "bored": "^1.0.0",
