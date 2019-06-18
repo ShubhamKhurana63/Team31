@@ -3,7 +3,7 @@ We have created a very simple web application called 'Anti-Boring'. The user sim
 
 Technologies used:
 Frontend - Embedded JavaScript and Bootstrap 4
-Backend - Node.js
+Backend - GraphQL, Node.js
 Database - MongoDB
 API consumed - https://www.boredapi.com/api
 
